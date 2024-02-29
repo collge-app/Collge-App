@@ -1,0 +1,35 @@
+server:
+  port: 9091
+
+
+spring:
+  datasource:
+    username: root
+    password: password
+    url: jdbc:mysql://localhost:3306/user
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  application:
+    name: "USER-SERVICE"
+  thymeleaf:
+    prefix: /templates/
+    suffix: .html
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    prefer-ip-address: true
+
+management:
+  tracing:
+    sampling:
+      probability: 1
+
